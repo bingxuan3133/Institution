@@ -6,6 +6,8 @@
 
 extern Stack stack;
 
+typedef enum {NO_ERROR, ERROR_INVALID_YEAR} ExceptionError;
+
 typedef enum {Unknown,
 				University,
 				UniversityCollege,
@@ -30,5 +32,7 @@ int Institution_select(LinkedList *inputList,
 						int (*compare)(void *, void *));
 
 int isUniversityCollege(void *elem1, void *type);
-						
+
+int wasEstablishedBefore(void *elem, void *year);
+
 #endif // __INSTITUTION_H__
